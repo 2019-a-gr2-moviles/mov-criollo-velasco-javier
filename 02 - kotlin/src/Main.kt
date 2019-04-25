@@ -2,6 +2,7 @@
 
 import java.nio.file.attribute.DosFileAttributeView
 import java.util.*
+import javax.swing.AbstractCellEditor
 
 fun main(args : Array<String>){
     println("Hello, world!!!")
@@ -205,26 +206,27 @@ fun main(args : Array<String>){
 
 fun estaJalado(nota:Double):Double{
 
-when (nota) {
-    7.0 -> {
-        println("Pasaste con las justas")
-    }
-    10.0 -> {
-        println("Genial :D Felicidades!")
-    }
 
-    0.0 -> {
-        println("Dios mio que vago!")
+    when (nota) {
+        7.0 -> {
+            println("Pasaste con las justas")
+        }
+        10.0 -> {
+            println("Genial :D Felicidades!")
+        }
+
+        0.0 -> {
+            println("Dios mio que vago!")
+
+        }
+        else -> {
+            println("Tu nota es: $nota")
+            //usar lo siguiente si es nota un clase y se llama a una variable dentro de esa clase
+            //println("Tu nota es: ${nota}")
+        }
 
     }
-    else -> {
-        println("Tu nota es: $nota")
-        //usar lo siguiente si es nota un clase y se llama a una variable dentro de esa clase
-        //println("Tu nota es: ${nota}")
-    }
-
-}
-return nota
+    return nota
 
 }
 
@@ -238,5 +240,148 @@ fun holaMundoAvanzado(mensaje: Any):Unit{
 
 fun sumarDosNumeros(numUno:Int, numDos:Int):Int{
 return numUno + numDos
+
+}
+
+class Usuario(val cedula:String){
+    public var nombre: String = ""
+
+    public var apellido: String
+
+  /*  ©
+
+c    }*/
+
+    constructor(cedulaM:String,apellido:String):this(cedulaM){
+        public var apellido: String
+
+
+    }
+
+
+
+
+}
+
+class UsuarioKT(public var nombre: String,
+                public var apellido: String,
+                private var id:Int,
+                protected var id_:Int){
+
+    //
+    init {
+
+    }
+
+
+    //
+    fun hola():Unit{
+        return this.apellido
+    }
+
+    private fun hola2():Unit{
+        return this.apellido
+    }
+
+    protected fun hola3():Unit{
+        return this.apellido
+    }
+
+    //si queremos usar static no se puede
+    //se debe usar Companion Object
+    companion object {
+        val gravedad =10.5
+                fun correr(){
+                    println("Estoy corriendo en $gravedad")
+                }
+    }
+    //usamos la proiedad gravedad y el metodo correr
+    fun aa(){
+        UsuarioKT.gravedad
+        UsuarioKT.correr()
+
+    }
+    //ejemplo de uso de static
+    class BaseDeDatos{
+        companion object {
+            val usuarios = arrayListOf(1,2,3)
+            fun agregarUsuario(usuario:Int){
+                this.usuarios.add(usuario)
+            }
+            fun eliminarUsuario(){
+
+            }
+        }
+    }
+}
+
+fun a(){
+    var adrian = UsuarioKT(nombre = "a", apellido = "b", id = 4, id_ = 5)
+    adrian.nombre = "asdasd"
+
+
+}
+
+//ejemplo sobrecarga
+//quiero que ademas de numero me permita recivir string
+//permite recivir distintos numeros de parametros o tippos de parametros
+//por esa razon usamos varios constructores
+class Numero(var numero:Int){
+    constructor(numeroString:String):this(numeroString.toInt()){
+
+        println("Constructor")
+
+    }
+    //si instanciamos un init quien se ejecuta primero el constructor o el init
+
+    init {
+        println("INIT")
+
+        //en init solo tenemos acceso a las propiedades del primer constructor
+
+    }
+}
+
+
+//las propiedades estaticas no necesitan que se tenga una instancia de una clase para ser usado
+
+//ejemplo clase abstracta= no quiero que nadie la instancie, porque la usare en una suma
+open class Numeros(var numeroUno, var numeroDos ){
+
+}
+class Suma(var numeroUnos:int, var numeroDoss): Numero(numeroUnos,numeroDoss){
+
+}
+
+fun cc(){
+    val a=Suma(1,2)
+    //no se puede crear instancias de una clase abstract
+    val b=Numeros(1,2)
+}
+
+
+//existe oarametros requeridos y opcionales, pero ademas
+//cualquier clase o variable que usemos tiene este tipo Int? significa que la variable aveces sera nulo
+
+fun presley(requerido:Int,opcional:Int=1,nulo:Int?, nulo2:UsuarioKT?){
+    //UsuarioKt es el tipo de variable UsuarioKt y si le añade ? puede ser o no nulo
+
+
+    //para evitar null pointer exceeptions
+    if(nulç != null){
+        nulo2.nombre
+    }
+    val  nombresito = nulo2?.nombre.toString()//es un string que aveces es nulo y otras es tostring
+
+}
+
+fun cddd(){
+    presley(requerido = 1,nulo = 0)//Named Parameters
+    presley(1,1,0)
+    presley(1,1,null)
+
+    //nulo no puede ser de tipo Int
+
+    //    presley(1,null,null)
 
 }
