@@ -9,21 +9,19 @@
 
     <Button
             android:text="Gestionar Comida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnGestionarMenu"
-            android:layout_marginTop="224dp"
+            android:layout_width="128dp"
+            android:layout_height="66dp"
+            android:id="@+id/btnGestionarMenu" android:layout_marginTop="64dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.497"/>
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.531"/>
     <Button
             android:text="Crear Comida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnCrearMenu"
-            android:layout_marginTop="68dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnGestionarMenu" app:layout_constraintEnd_toEndOf="@+id/btnGestionarMenu"
-            app:layout_constraintStart_toStartOf="@+id/btnGestionarMenu" app:layout_constraintHorizontal_bias="0.515"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.077"/>
+            android:layout_width="128dp"
+            android:layout_height="66dp"
+            android:id="@+id/btnCrearMenu" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnGestionarMenu" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.174"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="@+id/btnGestionarMenu"
+            app:layout_constraintStart_toStartOf="@+id/btnGestionarMenu" app:layout_constraintHorizontal_bias="0.469"/>
 </android.support.constraint.ConstraintLayout>

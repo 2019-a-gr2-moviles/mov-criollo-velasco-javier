@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.example.examenmovilesb1">
 
     <application
@@ -9,16 +10,22 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ConsultarIngredientesActivity">
+        <activity android:name=".IngresarAutoActivity">
         </activity>
         <activity
-                android:name=".IngresarIngredientesActivity"
-                android:label="@string/title_activity_ingresar_auto"
+                android:name=".ActualizarActivity"
+                android:label="@string/title_activity_actualizar_comida"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".ActualizarActivity">
-        </activity>
         <activity android:name=".IngresarActivity">
+        </activity>
+        <activity android:name=".ActualizarIngredientesActivity">
+        </activity>
+        <activity android:name=".ConsultarIngredientesActivity">
+        </activity>
+        <activity android:name=".IngresarIngredientesActivity">
+        </activity>
+        <activity android:name=".ConsultarIngredientesActivity">
         </activity>
         <activity android:name=".ConsultarActivity">
         </activity>

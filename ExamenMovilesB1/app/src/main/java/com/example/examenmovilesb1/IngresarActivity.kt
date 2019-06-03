@@ -7,16 +7,17 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_ingresar.*
 
 class IngresarActivity : AppCompatActivity() {
+
     var usuario:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingresar)
+
         usuario = intent.getStringExtra("usuario").toString()
         btnAceptar.setOnClickListener { aceptarIngreso() }
         btnCancelar.setOnClickListener { cancelarIngreso()}
     }
-
 
     fun cancelarIngreso(){
         val intentCancelar= Intent(this, MenuActivity::class.java)

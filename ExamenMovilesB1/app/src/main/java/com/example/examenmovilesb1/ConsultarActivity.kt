@@ -20,8 +20,8 @@ class ConsultarActivity : AppCompatActivity() {
             android.R.layout.simple_list_item_1,
             BaseComida.mostrarComida()
         )
-        lstView.adapter = adapter;
-        lstView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+        listaComida.adapter = adapter;
+        listaComida.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
 
             val equipoSeleccionada = parent.getItemAtPosition(position) as Comida
             val intentEquipoSeleccionada = Intent(this, ActualizarActivity::class.java)

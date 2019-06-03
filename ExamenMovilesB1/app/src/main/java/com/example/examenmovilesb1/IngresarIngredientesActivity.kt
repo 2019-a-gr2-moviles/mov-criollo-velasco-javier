@@ -1,43 +1,62 @@
 package com.example.examenmovilesb1
 
 import android.content.Intent
+import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast
-
-import kotlinx.android.synthetic.main.activity_ingresar_auto.*
+import kotlinx.android.synthetic.main.activity_ingresar_ingredientes.*
 
 class IngresarIngredientesActivity : AppCompatActivity() {
-    var padreId : Int = 0
+
+
+    var id :Int = 0;
+    var idPadre :Int = 0
     var usuario :String = "";
-    var equipoRespaldo : Conductor? = null
+    var equipoRespaldo : Comida? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ingresar_auto)
-        setSupportActionBar(toolbar)
+        setContentView(R.layout.activity_ingresar_ingredientes)
+
         usuario = intent.getStringExtra("usuario").toString()
-        equipoRespaldo = intent.getParcelableExtra<Conductor>("EquipoRespaldo")
-        padreId = intent.getIntExtra("padreId", -1)
-        btnGuardar.setOnClickListener { guardarJugador() }
+        val jugadorRecibido = intent.getParcelableExtra<Ingredientes>("Ingredientes")
+        equipoRespaldo = intent.getParcelableExtra<Comida>("EquipoRespaldo")
+        txtNombreIngIng.setText(jugadorRecibido.nombreIngrediente.toString())
+        txtCantidadIngIng.setText(jugadorRecibido.cantidad.toString())
+        txtDescripcionIngIng.setText(jugadorRecibido.descripcionPreparacion.toString())
+        txtOpcionalIngIng.setText(jugadorRecibido.opcional.toString())
+        txtTipoIngIng.setText(jugadorRecibido.tipoIngrediente.toString())
+        txtRefriIngIng.setText(jugadorRecibido.necesitaRefrigeracion.toString())
+        id = jugadorRecibido.id.toString().toInt()
+        idPadre = jugadorRecibido.comidaId.toString().toInt()
+        btnActualizarIngIng.setOnClickListener { actualizarJugador() }
+        btnEliminarIngIng.setOnClickListener { eliminarJugador() }
     }
 
-
-    fun guardarJugador(){
-        val jugador = Auto(id = null,
-            chasis = txtnumeroCamiseta.text.toString().toInt(),
-            marca = txtNombreCamiseta.text.toString(),
-            colorUno = txtNombreJugador.text.toString(),
-            colorDos = txtpoderEspecialDos.text.toString(),
-            modelo = txtfechaIngresoEquipo.text.toString(),
-            anio = txtGoles.text.toString().toInt(),
-            idConductor = padreId)
-        BaseAutos.agregarJugador(jugador)
-        Toast.makeText(this, "Auto creado exitosamente "+usuario, Toast.LENGTH_SHORT).show()
-        val retorno = Intent(this, ActualizarActivity::class.java)
+    fun actualizarJugador(){
+        val jugador = Ingredientes(id = id,
+            nombreIngrediente = txtNombreIngIng.text.toString(),
+            cantidad = txtCantidadIngIng.text.toString().toInt(),
+            descripcionPreparacion = txtDescripcionIngIng.text.toString(),
+            opcional = txtOpcionalIngIng.text.toString(),
+            tipoIngrediente = txtTipoIngIng.text.toString(),
+            necesitaRefrigeracion = txtRefriIngIng.text.toString(),
+            comidaId = idPadre)
+        BaseIngredientes.actualizarIngredientes(jugador)
+        Toast.makeText(this, "Actualización de Ingrediente exitosa "+usuario, Toast.LENGTH_SHORT).show()
+       /* val retorno = Intent(this, ActualizarActivity::class.java)
         retorno.putExtra("usuario", usuario)
         retorno.putExtra("Equipo", equipoRespaldo)
-        startActivity(retorno)
+        startActivity(retorno)*/
     }
 
+    fun eliminarJugador(){
+        BaseIngredientes.eliminarIngredientes(id)
+        Toast.makeText(this, "Eliminación de Ingrediente exitosa "+usuario, Toast.LENGTH_SHORT).show()
+        /*val retorno = Intent(this, ActualizarActivity::class.java)
+        retorno.putExtra("usuario", usuario)
+        retorno.putExtra("Equipo", equipoRespaldo)
+        startActivity(retorno)*/
+    }
 }

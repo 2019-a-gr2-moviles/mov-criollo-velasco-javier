@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Examen Moviles Javier Criollo</string>
     <string name="title_activity_ingresar_auto">IngresarAutoActivity</string>
+    <string name="title_activity_actualizar_comida">ActualizarActivity</string>
+
 </resources>
