@@ -31,12 +31,12 @@ class ActualizarIngredientesActivity : AppCompatActivity() {
 
     fun actualizarJugador(){
         val jugador = Ingredientes(id = id,
-            nombreIngrediente = txtNomIng.text.toString().toInt(),
-            cantidad = txtCantIng.text.toString(),
+            nombreIngrediente = txtNomIng.text.toString(),
+            cantidad = txtCantIng.text.toString().toInt(),
             descripcionPreparacion = txtDescIng.text.toString(),
             opcional = txtOpciIng.text.toString(),
             tipoIngrediente = txtTipoIng.text.toString(),
-            necesitaRefrigeracion = txtRefriIng.text.toString().toInt(),
+            necesitaRefrigeracion = txtRefriIng.text.toString(),
             comidaId = idPadre)
         BaseIngredientes.actualizarIngredientes(jugador)
         Toast.makeText(this, "Actualización de Ingrediente exitosa "+usuario, Toast.LENGTH_SHORT).show()

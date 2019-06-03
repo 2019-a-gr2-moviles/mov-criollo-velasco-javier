@@ -4,21 +4,21 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Ingredientes(var id:Int?,
-                   var nombreIngrediente:Int,
-                   var cantidad:String,
+                   var nombreIngrediente:String,
+                   var cantidad:Int,
                    var descripcionPreparacion:String,
                    var opcional:String,
                    var tipoIngrediente:String,
-                   var necesitaRefrigeracion:Int,
+                   var necesitaRefrigeracion:String,
                    var comidaId:Int): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readInt(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
         parcel.readString(),
         parcel.readInt(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
         parcel.readInt()
     ) {
     }
@@ -32,12 +32,12 @@ class Ingredientes(var id:Int?,
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(id)
-        parcel.writeInt(nombreIngrediente)
-        parcel.writeString(cantidad)
+        parcel.writeString(nombreIngrediente)
+        parcel.writeInt(cantidad)
         parcel.writeString(descripcionPreparacion)
         parcel.writeString(opcional)
         parcel.writeString(tipoIngrediente)
-        parcel.writeInt(necesitaRefrigeracion)
+        parcel.writeString(necesitaRefrigeracion)
         parcel.writeInt(comidaId)
     }
 

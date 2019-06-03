@@ -21,12 +21,12 @@ class IngresarIngredientesActivity : AppCompatActivity() {
 
     fun guardarJugador(){
         val jugador = Ingredientes(id = null,
-            nombreIngrediente = txtNomIng.text.toString().toInt(),
-            cantidad = txtCantIng.text.toString(),
+            nombreIngrediente = txtNomIng.text.toString(),
+            cantidad = txtCantIng.text.toString().toInt(),
             descripcionPreparacion = txtDescIng.text.toString(),
             opcional = txtOpciIng.text.toString(),
             tipoIngrediente = txtTipoIng.text.toString(),
-            necesitaRefrigeracion = txtRefriIng.text.toString().toInt(),
+            necesitaRefrigeracion = txtRefriIng.text.toString(),
             comidaId = padreId)
         BaseIngredientes.agregarIngredientes(jugador)
         Toast.makeText(this, "Ingreso de Ingrediente exitoso "+usuario, Toast.LENGTH_SHORT).show()
