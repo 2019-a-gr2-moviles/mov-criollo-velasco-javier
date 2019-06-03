@@ -21,15 +21,15 @@ class IngresarIngredientesActivity : AppCompatActivity() {
 
     fun guardarJugador(){
         val jugador = Ingredientes(id = null,
-            nombreIngrediente = txtnumeroCamiseta.text.toString().toInt(),
-            cantidad = txtNombreCamiseta.text.toString(),
-            descripcionPreparacion = txtNombreJugador.text.toString(),
-            opcional = txtpoderEspecialDos.text.toString(),
-            tipoIngrediente = txtfechaIngresoEquipo.text.toString(),
-            necesitaRefrigeracion = txtGoles.text.toString().toInt(),
+            nombreIngrediente = txtNomIng.text.toString().toInt(),
+            cantidad = txtCantIng.text.toString(),
+            descripcionPreparacion = txtDescIng.text.toString(),
+            opcional = txtOpciIng.text.toString(),
+            tipoIngrediente = txtTipoIng.text.toString(),
+            necesitaRefrigeracion = txtRefriIng.text.toString().toInt(),
             comidaId = padreId)
         BaseIngredientes.agregarIngredientes(jugador)
-        Toast.makeText(this, "Ingredientes creado exitosamente "+usuario, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Ingreso de Ingrediente exitoso "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, ActualizarActivity::class.java)
         retorno.putExtra("usuario", usuario)
         retorno.putExtra("Equipo", equipoRespaldo)

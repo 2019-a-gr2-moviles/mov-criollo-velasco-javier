@@ -12,8 +12,8 @@ class IngresarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingresar)
         usuario = intent.getStringExtra("usuario").toString()
-        btnAceptar.setOnClickListener { aceptarIngreso() }
-        btnCancelar.setOnClickListener { cancelarIngreso()}
+        btnCrearCom.setOnClickListener { aceptarIngreso() }
+        btnCancelarCom.setOnClickListener { cancelarIngreso()}
     }
 
     fun cancelarIngreso(){
@@ -25,12 +25,12 @@ class IngresarActivity : AppCompatActivity() {
     fun aceptarIngreso(){
         val equipo= Comida(id = null,
             nombrePlato = txtNombre.text.toString(),
-            descripcionPlato = txtLiga.text.toString(),
-            nacionalidad = txtFechaCreacion.text.toString(),
-            numeroPersonas = txtNumCopInter.text.toString().toInt(),
-            picante = txtCampeonActual.text.toString())
+            descripcionPlato = txtDesc.text.toString(),
+            nacionalidad = txtNaciona.text.toString(),
+            numeroPersonas = txtNumPer.text.toString().toInt(),
+            picante = txtPican.text.toString())
         BaseComida.agregarComida(equipo)
-        Toast.makeText(this, "Ingreso exitoso "+usuario, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Ingreso de Comida exitoso "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)
         startActivity(retorno)

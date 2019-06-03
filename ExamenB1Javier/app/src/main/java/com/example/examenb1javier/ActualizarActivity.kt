@@ -15,28 +15,28 @@ class ActualizarActivity : AppCompatActivity() {
         usuario = intent.getStringExtra("usuario").toString()
         val equipoRecibida = intent.getParcelableExtra<Comida>("Equipo")
         txtNombre.setText(equipoRecibida.nombrePlato.toString())
-        txtLiga.setText(equipoRecibida.descripcionPlato.toString())
-        txtFechaCreacion.setText(equipoRecibida.nacionalidad.toString())
-        txtNumCopInter.setText(equipoRecibida.numeroPersonas.toString())
+        txtDesc.setText(equipoRecibida.descripcionPlato.toString())
+        txtNaciona.setText(equipoRecibida.nacionalidad.toString())
+        txtNumPer.setText(equipoRecibida.numeroPersonas.toString())
         txtCampeonAct.setText(equipoRecibida.picante.toString())
         padreId = equipoRecibida.id!!;
-        btnActualizar.setOnClickListener { actualizarEquipo() }
-        btnEliminar.setOnClickListener { eliminarEquipo() }
-        btnCrearJugador.setOnClickListener { crearJugador() }
-        btnGestionarJugador.setOnClickListener { gestionarJugador() }
+        btnActualizarAct.setOnClickListener { actualizarEquipo() }
+        btnEliminarAct.setOnClickListener { eliminarEquipo() }
+        btnCrearIng.setOnClickListener { crearJugador() }
+        btnGestionarIng.setOnClickListener { gestionarJugador() }
         btnMenuRetorno.setOnClickListener { retorno() }
     }
 
     fun actualizarEquipo(){
         val actualizarEquipo = Comida(id = padreId,
             nombrePlato = txtNombre.text.toString(),
-            descripcionPlato = txtLiga.text.toString(),
-            nacionalidad = txtFechaCreacion.text.toString(),
-            numeroPersonas = txtNumCopInter.text.toString().toInt(),
+            descripcionPlato = txtDesc.text.toString(),
+            nacionalidad = txtNaciona.text.toString(),
+            numeroPersonas = txtNumPer.text.toString().toInt(),
             picante = txtCampeonAct.text.toString()
         )
         BaseComida.actualizarComida(actualizarEquipo)
-        Toast.makeText(this, "Actualización exitosa "+usuario, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Actualización de Comida exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)
         startActivity(retorno)
@@ -44,7 +44,7 @@ class ActualizarActivity : AppCompatActivity() {
 
     fun eliminarEquipo(){
         BaseComida.eliminarComida(padreId);
-        Toast.makeText(this, "Eliminación exitosa "+usuario, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Eliminación de Comida exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)
         startActivity(retorno)
@@ -53,9 +53,9 @@ class ActualizarActivity : AppCompatActivity() {
     fun crearJugador(){
         val equipoRespaldo = Comida(id = padreId,
             nombrePlato = txtNombre.text.toString(),
-            descripcionPlato = txtLiga.text.toString(),
-            nacionalidad = txtFechaCreacion.text.toString(),
-            numeroPersonas = txtNumCopInter.text.toString().toInt(),
+            descripcionPlato = txtDesc.text.toString(),
+            nacionalidad = txtNaciona.text.toString(),
+            numeroPersonas = txtNumPer.text.toString().toInt(),
             picante = txtCampeonAct.text.toString()
         )
         val retorno = Intent(this, IngresarIngredientesActivity::class.java)
@@ -68,9 +68,9 @@ class ActualizarActivity : AppCompatActivity() {
     fun gestionarJugador(){
         val equipoRespaldo = Comida(id = padreId,
             nombrePlato = txtNombre.text.toString(),
-            descripcionPlato = txtLiga.text.toString(),
-            nacionalidad = txtFechaCreacion.text.toString(),
-            numeroPersonas = txtNumCopInter.text.toString().toInt(),
+            descripcionPlato = txtDesc.text.toString(),
+            nacionalidad = txtNaciona.text.toString(),
+            numeroPersonas = txtNumPer.text.toString().toInt(),
             picante = txtCampeonAct.text.toString()
         )
         val retorno = Intent(this, ConsultarIngredietesActivity::class.java)

@@ -12,54 +12,54 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombreCamiseta"
-            app:layout_constraintStart_toStartOf="@+id/txtnumeroCamiseta"
-            app:layout_constraintEnd_toEndOf="@+id/txtnumeroCamiseta"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtnumeroCamiseta"
+            android:id="@+id/txtCantIng"
+            app:layout_constraintStart_toStartOf="@+id/txtNomIng"
+            app:layout_constraintEnd_toEndOf="@+id/txtNomIng"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtNomIng"
             android:hint="cantidad"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombreJugador"
-            app:layout_constraintStart_toStartOf="@+id/txtNombreCamiseta" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombreCamiseta"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreCamiseta" android:hint="descripcionPreparacion"/>
+            android:id="@+id/txtDescIng"
+            app:layout_constraintStart_toStartOf="@+id/txtCantIng" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtCantIng"
+            app:layout_constraintEnd_toEndOf="@+id/txtCantIng" android:hint="descripcionPreparacion"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtpoderEspecialDos" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombreJugador"
-            app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreJugador" android:hint="opcional"/>
+            android:id="@+id/txtOpciIng" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescIng"
+            app:layout_constraintStart_toStartOf="@+id/txtDescIng"
+            app:layout_constraintEnd_toEndOf="@+id/txtDescIng" android:hint="opcional"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintStart_toStartOf="@+id/txtpoderEspecialDos"
-            app:layout_constraintEnd_toEndOf="@+id/txtpoderEspecialDos"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtpoderEspecialDos"
+            android:id="@+id/txtTipoIng"
+            app:layout_constraintStart_toStartOf="@+id/txtOpciIng"
+            app:layout_constraintEnd_toEndOf="@+id/txtOpciIng"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtOpciIng"
             android:hint="tipoIngrediente"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/txtGoles" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintStart_toStartOf="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintEnd_toEndOf="@+id/txtfechaIngresoEquipo" android:hint="necesitaRefrigeracion"/>
+            android:id="@+id/txtRefriIng" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtTipoIng"
+            app:layout_constraintStart_toStartOf="@+id/txtTipoIng"
+            app:layout_constraintEnd_toEndOf="@+id/txtTipoIng" android:hint="necesitaRefrigeracion"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/txtnumeroCamiseta" android:layout_marginTop="40dp"
+            android:id="@+id/txtNomIng" android:layout_marginTop="40dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:hint="nombreIngrediente"/>
@@ -67,7 +67,7 @@
             android:text="Crear Ingrediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGuardar" app:layout_constraintStart_toStartOf="@+id/txtGoles"
-            app:layout_constraintEnd_toEndOf="@+id/txtGoles" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtGoles" app:layout_constraintHorizontal_bias="0.496"/>
+            android:id="@+id/btnGuardar" app:layout_constraintStart_toStartOf="@+id/txtRefriIng"
+            app:layout_constraintEnd_toEndOf="@+id/txtRefriIng" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtRefriIng" app:layout_constraintHorizontal_bias="0.496"/>
 </android.support.constraint.ConstraintLayout>

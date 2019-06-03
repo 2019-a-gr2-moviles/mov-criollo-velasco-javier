@@ -17,12 +17,12 @@ class ActualizarIngredientesActivity : AppCompatActivity() {
         usuario = intent.getStringExtra("usuario").toString()
         val jugadorRecibido = intent.getParcelableExtra<Ingredientes>("Ingredientes")
         equipoRespaldo = intent.getParcelableExtra<Comida>("EquipoRespaldo")
-        txtnumeroCamiseta.setText(jugadorRecibido.nombreIngrediente.toString())
-        txtNombreCamiseta.setText(jugadorRecibido.cantidad.toString())
-        txtNombreJugador.setText(jugadorRecibido.descripcionPreparacion.toString())
-        txtpoderEspecialDos.setText(jugadorRecibido.opcional.toString())
-        txtfechaIngresoEquipo.setText(jugadorRecibido.tipoIngrediente.toString())
-        txtGoles.setText(jugadorRecibido.necesitaRefrigeracion.toString())
+        txtNomIng.setText(jugadorRecibido.nombreIngrediente.toString())
+        txtCantIng.setText(jugadorRecibido.cantidad.toString())
+        txtDescIng.setText(jugadorRecibido.descripcionPreparacion.toString())
+        txtOpciIng.setText(jugadorRecibido.opcional.toString())
+        txtTipoIng.setText(jugadorRecibido.tipoIngrediente.toString())
+        txtRefriIng.setText(jugadorRecibido.necesitaRefrigeracion.toString())
         id = jugadorRecibido.id.toString().toInt()
         idPadre = jugadorRecibido.comidaId.toString().toInt()
         btnActualizarJugador.setOnClickListener { actualizarJugador() }
@@ -31,15 +31,15 @@ class ActualizarIngredientesActivity : AppCompatActivity() {
 
     fun actualizarJugador(){
         val jugador = Ingredientes(id = id,
-            nombreIngrediente = txtnumeroCamiseta.text.toString().toInt(),
-            cantidad = txtNombreCamiseta.text.toString(),
-            descripcionPreparacion = txtNombreJugador.text.toString(),
-            opcional = txtpoderEspecialDos.text.toString(),
-            tipoIngrediente = txtfechaIngresoEquipo.text.toString(),
-            necesitaRefrigeracion = txtGoles.text.toString().toInt(),
+            nombreIngrediente = txtNomIng.text.toString().toInt(),
+            cantidad = txtCantIng.text.toString(),
+            descripcionPreparacion = txtDescIng.text.toString(),
+            opcional = txtOpciIng.text.toString(),
+            tipoIngrediente = txtTipoIng.text.toString(),
+            necesitaRefrigeracion = txtRefriIng.text.toString().toInt(),
             comidaId = idPadre)
         BaseIngredientes.actualizarIngredientes(jugador)
-        Toast.makeText(this, "Actualización jugador exitosa "+usuario, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Actualización de Ingrediente exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, ActualizarActivity::class.java)
         retorno.putExtra("usuario", usuario)
         retorno.putExtra("Equipo", equipoRespaldo)
@@ -48,7 +48,7 @@ class ActualizarIngredientesActivity : AppCompatActivity() {
 
     fun eliminarJugador(){
         BaseIngredientes.eliminarIngredientes(id)
-        Toast.makeText(this, "Eliminación jugador exitosa "+usuario, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Eliminación de Ingrediente exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, ActualizarActivity::class.java)
         retorno.putExtra("usuario", usuario)
         retorno.putExtra("Equipo", equipoRespaldo)
