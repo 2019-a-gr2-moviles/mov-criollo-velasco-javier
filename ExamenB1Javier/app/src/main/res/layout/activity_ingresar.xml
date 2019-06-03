@@ -16,7 +16,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtNombre"
             app:layout_constraintEnd_toEndOf="@+id/txtNombre"
             app:layout_constraintStart_toStartOf="@+id/txtNombre" android:layout_marginStart="3dp"
-            android:hint="Apellido" app:layout_constraintHorizontal_bias="1.0"/>
+            android:hint="descripcionPlato" app:layout_constraintHorizontal_bias="1.0"/>
     <Button
             android:text="Crear"
             android:layout_width="92dp"
@@ -42,14 +42,14 @@
             android:id="@+id/txtNombre" android:layout_marginTop="40dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:hint="Nombre"/>
+            app:layout_constraintStart_toStartOf="parent" android:hint="nombrePlato"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/txtNumCopInter"
-            android:hint="Cantidad Autos"
+            android:hint="numeroPersonas"
             app:layout_constraintStart_toStartOf="@+id/txtFechaCreacion"
             app:layout_constraintEnd_toEndOf="@+id/txtFechaCreacion"
             android:layout_marginTop="12dp" app:layout_constraintTop_toBottomOf="@+id/txtFechaCreacion"
@@ -62,7 +62,7 @@
             android:id="@+id/txtCampeonActual"
             app:layout_constraintStart_toStartOf="@+id/txtNumCopInter"
             app:layout_constraintEnd_toEndOf="@+id/txtNumCopInter"
-            app:layout_constraintTop_toBottomOf="@+id/txtNumCopInter" android:hint="Licencia"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumCopInter" android:hint="picante"
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="4dp"/>
     <EditText
             android:layout_width="wrap_content"
@@ -72,5 +72,5 @@
             android:id="@+id/txtFechaCreacion"
             app:layout_constraintStart_toStartOf="@+id/txtLiga" app:layout_constraintEnd_toEndOf="@+id/txtLiga"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtLiga"
-            android:hint="Fecha Nacimiento"/>
+            android:hint="nacionalidad"/>
 </android.support.constraint.ConstraintLayout>

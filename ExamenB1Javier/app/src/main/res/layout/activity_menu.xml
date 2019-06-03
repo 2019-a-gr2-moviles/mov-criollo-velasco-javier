@@ -8,7 +8,7 @@
         tools:context=".MenuActivity">
 
     <Button
-            android:text="Gestionar Conductores"
+            android:text="Gestionar Comida"
             android:layout_width="128dp"
             android:layout_height="66dp"
             android:id="@+id/btnEquipo" android:layout_marginTop="64dp"
@@ -16,7 +16,7 @@
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.531"/>
     <Button
-            android:text="Crear Conductor"
+            android:text="Crear Comida"
             android:layout_width="128dp"
             android:layout_height="66dp"
             android:id="@+id/btnCrearEquipo" android:layout_marginTop="8dp"

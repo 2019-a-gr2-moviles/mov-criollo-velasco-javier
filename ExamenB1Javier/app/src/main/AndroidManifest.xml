@@ -17,11 +17,11 @@
         </activity>
         <activity android:name=".ActualizarActivity">
         </activity>
-        <activity android:name=".IngresarAutoActivity">
+        <activity android:name=".IngresarIngredientesActivity">
         </activity>
-        <activity android:name=".ConsultarAutosActivity">
+        <activity android:name=".ConsultarIngredietesActivity">
         </activity>
-        <activity android:name=".ActualizarAutoActivity">
+        <activity android:name=".ActualizarIngredientesActivity">
         </activity>
         <activity android:name=".ActualizarIngredientesActivity">
         </activity>

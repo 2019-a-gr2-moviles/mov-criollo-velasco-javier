@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".IngresarAutoActivity">
+        tools:context=".IngresarIngredientesActivity">
 
     <EditText
             android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
             app:layout_constraintStart_toStartOf="@+id/txtnumeroCamiseta"
             app:layout_constraintEnd_toEndOf="@+id/txtnumeroCamiseta"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtnumeroCamiseta"
-            android:hint="Marca"/>
+            android:hint="cantidad"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:id="@+id/txtNombreJugador"
             app:layout_constraintStart_toStartOf="@+id/txtNombreCamiseta" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/txtNombreCamiseta"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreCamiseta" android:hint="Color Primario"/>
+            app:layout_constraintEnd_toEndOf="@+id/txtNombreCamiseta" android:hint="descripcionPreparacion"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:id="@+id/txtpoderEspecialDos" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/txtNombreJugador"
             app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreJugador" android:hint="Color Secundario"/>
+            app:layout_constraintEnd_toEndOf="@+id/txtNombreJugador" android:hint="opcional"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             app:layout_constraintStart_toStartOf="@+id/txtpoderEspecialDos"
             app:layout_constraintEnd_toEndOf="@+id/txtpoderEspecialDos"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtpoderEspecialDos"
-            android:hint="Modelo"/>
+            android:hint="tipoIngrediente"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
             android:id="@+id/txtGoles" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/txtfechaIngresoEquipo"
             app:layout_constraintStart_toStartOf="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintEnd_toEndOf="@+id/txtfechaIngresoEquipo" android:hint="Anio"/>
+            app:layout_constraintEnd_toEndOf="@+id/txtfechaIngresoEquipo" android:hint="necesitaRefrigeracion"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,9 +62,9 @@
             android:id="@+id/txtnumeroCamiseta" android:layout_marginTop="40dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:hint="Chasis"/>
+            app:layout_constraintStart_toStartOf="parent" android:hint="nombreIngrediente"/>
     <Button
-            android:text="Crear"
+            android:text="Crear Ingrediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnGuardar" app:layout_constraintStart_toStartOf="@+id/txtGoles"

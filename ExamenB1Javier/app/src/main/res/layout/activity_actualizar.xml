@@ -15,7 +15,8 @@
             android:id="@+id/txtCampeonAct"
             app:layout_constraintStart_toStartOf="@+id/txtNumCopInter"
             app:layout_constraintEnd_toEndOf="@+id/txtNumCopInter" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtNumCopInter"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtNumCopInter"
+            android:hint="picante"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,7 +25,7 @@
             android:id="@+id/txtFechaCreacion" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/txtLiga"
             app:layout_constraintStart_toStartOf="@+id/txtLiga" app:layout_constraintEnd_toEndOf="@+id/txtLiga"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintHorizontal_bias="0.0" android:hint="nacionalidad"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -33,7 +34,7 @@
             android:id="@+id/txtLiga" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/txtNombre"
             app:layout_constraintStart_toStartOf="@+id/txtNombre" app:layout_constraintEnd_toEndOf="@+id/txtNombre"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintHorizontal_bias="0.0" android:hint="descripcionPlato"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +43,7 @@
             android:id="@+id/txtNombre" android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" android:hint="nombrePlato"/>
     <Button
             android:text="Eliminar"
             android:layout_width="wrap_content"
@@ -60,20 +61,22 @@
             app:layout_constraintTop_toBottomOf="@+id/txtCampeonAct" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.0"/>
     <Button
-            android:text="Crear Auto"
+            android:text="Crear Ingrediente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnCrearJugador" app:layout_constraintStart_toStartOf="@+id/btnEliminar"
-            app:layout_constraintEnd_toEndOf="@+id/btnEliminar" android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnEliminar"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            android:id="@+id/btnCrearJugador"
+            app:layout_constraintEnd_toEndOf="@+id/btnActualizar"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="@+id/btnEliminar"
+            android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/txtCampeonAct"
+            android:layout_marginTop="80dp" app:layout_constraintHorizontal_bias="0.346"/>
     <Button
-            android:text="Gestionar Autos"
+            android:text="Gestionar Ingredientes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGestionarJugador" app:layout_constraintStart_toStartOf="@+id/btnActualizar"
-            app:layout_constraintEnd_toEndOf="@+id/btnActualizar" android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnActualizar" app:layout_constraintHorizontal_bias="0.2"/>
+            android:id="@+id/btnGestionarJugador"
+            app:layout_constraintTop_toBottomOf="@+id/btnCrearJugador"
+            android:layout_marginTop="36dp" app:layout_constraintEnd_toEndOf="@+id/btnCrearJugador"
+            app:layout_constraintStart_toStartOf="@+id/btnCrearJugador" app:layout_constraintHorizontal_bias="0.487"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,13 +85,14 @@
             android:id="@+id/txtNumCopInter"
             app:layout_constraintStart_toStartOf="@+id/txtFechaCreacion"
             app:layout_constraintEnd_toEndOf="@+id/txtFechaCreacion" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtFechaCreacion"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtFechaCreacion" android:hint="numeroPersonas"/>
     <Button
             android:text="Volver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnMenuRetorno" app:layout_constraintStart_toStartOf="@+id/btnCrearJugador"
+            android:id="@+id/btnMenuRetorno"
+            app:layout_constraintStart_toStartOf="@+id/btnGestionarJugador"
             app:layout_constraintEnd_toEndOf="@+id/btnGestionarJugador"
-            app:layout_constraintTop_toBottomOf="@+id/btnGestionarJugador" android:layout_marginTop="16dp"
-            app:layout_constraintHorizontal_bias="0.401" android:layout_marginStart="8dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/btnGestionarJugador" android:layout_marginTop="44dp"
+            app:layout_constraintHorizontal_bias="0.495"/>
 </android.support.constraint.ConstraintLayout>

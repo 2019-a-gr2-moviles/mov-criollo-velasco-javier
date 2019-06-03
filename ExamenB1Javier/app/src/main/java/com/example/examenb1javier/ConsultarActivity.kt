@@ -16,7 +16,7 @@ class ConsultarActivity : AppCompatActivity() {
         val adapter = ArrayAdapter<Comida>(
             this,
             android.R.layout.simple_list_item_1,
-            BaseComida.mostrarEquipo()
+            BaseComida.mostrarComida()
         )
         lstView.adapter = adapter;
         lstView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->

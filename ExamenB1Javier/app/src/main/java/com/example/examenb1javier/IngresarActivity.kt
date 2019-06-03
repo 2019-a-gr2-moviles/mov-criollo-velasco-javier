@@ -24,12 +24,12 @@ class IngresarActivity : AppCompatActivity() {
 
     fun aceptarIngreso(){
         val equipo= Comida(id = null,
-            nombres = txtNombre.text.toString(),
-            apellidos = txtLiga.text.toString(),
-            fechaNacimiento = txtFechaCreacion.text.toString(),
-            cantidadAutos = txtNumCopInter.text.toString().toInt(),
-            licencia = txtCampeonActual.text.toString())
-        BaseComida.agregarEquipo(equipo)
+            nombrePlato = txtNombre.text.toString(),
+            descripcionPlato = txtLiga.text.toString(),
+            nacionalidad = txtFechaCreacion.text.toString(),
+            numeroPersonas = txtNumCopInter.text.toString().toInt(),
+            picante = txtCampeonActual.text.toString())
+        BaseComida.agregarComida(equipo)
         Toast.makeText(this, "Ingreso exitoso "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)

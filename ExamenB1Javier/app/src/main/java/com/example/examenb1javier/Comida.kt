@@ -4,11 +4,11 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Comida(var id:Int?,
-             var nombres:String,
-             var apellidos:String,
-             var fechaNacimiento:String,
-             var cantidadAutos:Int,
-             var licencia:String) : Parcelable {
+             var nombrePlato:String,
+             var descripcionPlato:String,
+             var nacionalidad:String,
+             var numeroPersonas:Int,
+             var picante:String) : Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
@@ -19,23 +19,30 @@ class Comida(var id:Int?,
         parcel.readString()
     ) {
     }
-
+/*
     override fun toString(): String {
-        //return "NOMBRE: ${nombres} LIGA: ${apellidos} FECHA CREACION: ${fechaNacimiento} NUMERO COPAS:${cantidadAutos} CAMPEON ACTUAL:${licencia}"
-        return "$nombres $apellidos"
+        //return "NOMBRE: ${nombrePlato} LIGA: ${descripcionPlato} FECHA CREACION: ${nacionalidad} NUMERO COPAS:${numeroPersonas} CAMPEON ACTUAL:${picante}"
+        return "$nombrePlato $descripcionPlato"
     }
+*/
+
+
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(id)
-        parcel.writeString(nombres)
-        parcel.writeString(apellidos)
-        parcel.writeString(fechaNacimiento)
-        parcel.writeInt(cantidadAutos)
-        parcel.writeString(licencia)
+        parcel.writeString(nombrePlato)
+        parcel.writeString(descripcionPlato)
+        parcel.writeString(nacionalidad)
+        parcel.writeInt(numeroPersonas)
+        parcel.writeString(picante)
     }
 
     override fun describeContents(): Int {
         return 0
+    }
+
+    override fun toString(): String {
+        return "id=$id, nombrePlato='$nombrePlato', descripcionPlato='$descripcionPlato', nacionalidad='$nacionalidad', numeroPersonas=$numeroPersonas, picante='$picante'"
     }
 
     companion object CREATOR : Parcelable.Creator<Comida> {

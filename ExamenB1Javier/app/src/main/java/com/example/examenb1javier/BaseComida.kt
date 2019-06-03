@@ -10,22 +10,22 @@ class BaseComida{
             this.nombreUsuario = nombre;
         }
 
-        fun agregarEquipo(equipo: Comida):ArrayList<Comida>{
+        fun agregarComida(equipo: Comida):ArrayList<Comida>{
             equipo.id = serial
             serial++
             LST_EQUIPO.add(equipo)
             return LST_EQUIPO
         }
 
-        fun mostrarEquipo(): List<Comida> {
+        fun mostrarComida(): List<Comida> {
             return this.LST_EQUIPO
         }
 
-        fun eliminarEquipo(id:Int){
+        fun eliminarComida(id:Int){
             this.LST_EQUIPO.removeAll{ it.id == id }
         }
 
-        fun actualizarEquipo(equipo: Comida){
+        fun actualizarComida(equipo: Comida){
             val indice = this.LST_EQUIPO.indexOfFirst { it.id == equipo.id }
             this.LST_EQUIPO[indice] = equipo
         }
