@@ -11,7 +11,7 @@ class BaseComida {
             this.nombreUsuario = nombre;
         }
 
-        fun agregarEquipo(comida: Comida):ArrayList<Comida>{
+        fun agregarComida(comida: Comida):ArrayList<Comida>{
             comida.id = serial
             serial++
             listaComida.add(comida)

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     fun ingresoUsuario(){
         BaseComida.guardarUsuario(txtNombreMain.text.toString())
         val intentMenu = Intent(this, MenuActivity::class.java)
-        intentMenu.putExtra("", txtNombreMain.text.toString())
+        intentMenu.putExtra("usuario", txtNombreMain.text.toString())
         startActivity(intentMenu)
     }
 }
